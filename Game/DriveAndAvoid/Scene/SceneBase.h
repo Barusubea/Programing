@@ -13,14 +13,14 @@ enum eSceneType
 };
 
 //基底シーンクラス
-Class SceneBase
+class SceneBase
 {
 public:
- 	sceneBase() {}
+	SceneBase() {}
 	virtual ~SceneBase() {}
 
 	//初期化処理
-	virtual void Initialize(){}
+	virtual void Initialize() {}
 	//更新処理
 	virtual eSceneType Update()
 	{
@@ -34,4 +34,4 @@ public:
 	//現在のシーン情報を取得
 	virtual eSceneType GetNowScene() const = 0;
 
-}
+};
