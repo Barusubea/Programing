@@ -11,8 +11,8 @@ private:
 	int enemy_image[3];		//“G‰æ‘œ
 
 public:
-	RankingInputsScene();
-	virtual ~RankingInputScene();
+	ResultScene();
+	virtual ~ResultScene();
 
 	virtual void Initialize() override;
 	virtual eSceneType Update() override;
