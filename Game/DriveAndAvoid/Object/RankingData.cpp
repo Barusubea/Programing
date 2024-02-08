@@ -1,5 +1,5 @@
 #include "RankingData.h"
-#include"<stdio.h>"
+#include<stdio.h>
 #include<string.h>
 
 RankingData::RankingData()
@@ -38,7 +38,7 @@ void RankingData::Initialize()
 	//対象ファイルから読み込む
 	for (int i = 0; i < 5; i++)
 	{
-		fscan_s(fp, "%6d,%2d,%[^,],\n,&score[i],&rank[i],name[i],15");
+		fscanf_s(fp, "%6d,%2d,%[^,],\n",&score[i],&rank[i],name[i],15);
 	}
 
 	//ファイルクローズ
@@ -112,7 +112,7 @@ void RankingData::SortData()
 	}
 	for (int i = 0; i < 5; i++)
 	{
-		for (int j = i + 1; J < 6; j++)
+		for (int j = i + 1; j < 6; j++)
 		{
 			if (score[i] > score[j])
 			{

@@ -2,7 +2,7 @@
 #include"../Utility/InputControl.h"
 #include"DxLib.h"
 
-Player::Player():is_active(false),image(NULL),location(0.0f),box_size(0.0f),angel(0.0f),speed(0.0f),hp(0.0f),fuel(0.0f),barrier_const(0),
+Player::Player():is_active(false),image(NULL),location(0.0f),box_size(0.0f),angle(0.0f),speed(0.0f),hp(0.0f),fuel(0.0f),barrier_count(0),
 barrier(nullptr)
 {
 }
@@ -17,11 +17,11 @@ void Player::Initialize()
 	is_active = true;
 	location = Vector2D(320.0f, 380.f);
 	box_size = Vector2D(31.0f, 60.0f);
-	angel = 0.0f;
+	angle = 0.0f;
 	speed = 3.0f;
 	hp = 1000;
 	fuel = 20000;
-	barrier_const = 3;
+	barrier_count = 3;
 
 	//画像の読み込み
 	image = LoadGraph("Resource/image/car1pol.bmp");
@@ -63,7 +63,7 @@ void Player::Update()
 	}
 
 	//バリア処理
-	if (InputControl::GetButtonDown(XINPUT_BUTTON_B) && barrier_const > 0)
+	if (InputControl::GetButtonDown(XINPUT_BUTTON_B) && barrier_count > 0)
 	{
 		if (barrier == nullptr)
 		{
@@ -87,7 +87,7 @@ void Player::Update()
 void Player::Draw()
 {
 	//プレイヤー画像の描画
-	DrawRotaGraph(location.x, location.y, 1.0, angel, image, TRUE);
+	DrawRotaGraph(location.x, location.y, 1.0, angle, image, TRUE);
 
 	//バリアが生成されていたら、描画を行う
 	if (barrier != nullptr)
@@ -136,7 +136,7 @@ Vector2D Player::GetBoxSize() const
 //速さ取得処理
 float Player::GetSpeed() const
 {
-	return this->box_size;
+	return this->speed;
 }
 
 //燃料取得処理
@@ -192,7 +192,7 @@ void Player::Movement()
 	location += move;
 
 	//画面外に行かないように制限する
-	if ((location.x < box_size.x) || (location.X >= 640.0f - 180.0f) || (location.y < box_size.y) || (location.y >= 480.0f - box_size.y))
+	if ((location.x < box_size.x) || (location.x >= 640.0f - 180.0f) || (location.y < box_size.y) || (location.y >= 480.0f - box_size.y))
 	{
 		location -= move;
 	}

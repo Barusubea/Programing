@@ -5,7 +5,7 @@
 //固定化するフレームレート値
 #define TARGET_FRAME_RATE	(60)
 //1フレーム当たりの時間(マイクロ秒)
-#define DELETA_SECOND		(1000000/TARGET_FRAME_RATE)
+#define DELTA_SECOND		(1000000/TARGET_FRAME_RATE)
 
 //シーンマネージャークラス
 class SceneManager

@@ -2,7 +2,9 @@
 #include"../Utility/InputControl.h"
 #include"DxLib.h"
 
-RankingInputScene::RankingInputsScene() : background_image(NULL), ranking(nullptr), score(0), name_num(0), cursor_x(0),
+RankingInputScene::RankingInputScene() :background_image(NULL),
+ranking(nullptr), score(0),
+name_num(0), cursor_x(0),
 cursor_y(0)
 {
 	memset(name, NULL, (sizeof(char) * 15));
@@ -42,7 +44,7 @@ void RankingInputScene::Initialize()
 	}
 
 	//結果を読み込む
-	fscanf_s(fp, "%6d,\n,&score");
+	fscanf_s(fp, "%6d,\n",&score);
 
 	//ファイルクローズ
 	fclose(fp);

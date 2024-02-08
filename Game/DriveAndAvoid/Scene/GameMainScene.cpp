@@ -26,7 +26,7 @@ void GameMainScene::Initialize()
 	//画像の読み込み
 	back_ground = LoadGraph("Resource/iamges/back.bmp");
 	barrier_image = LoadGraph("Resource/images/barrier.png");
-	int result = LoadDiveGraph("Resource/images/car.bmp", 3, 3, 1, 63, 120, enemy_image);
+	int result = LoadDivGraph("Resource/images/car.bmp", 3, 3, 1, 63, 120, enemy_image);
 
 	//エラーチェック
 	if (back_ground == -1)
@@ -164,8 +164,8 @@ void GameMainScene::Draw() const
 		DrawBoxAA(fx, fy + 20.0f, fx + 100.0f, fy + 40.0f, GetColor(0, 0, 0), FALSE);
 
 		//体力ゲージの描画
-		float fx = 510.0f;
-		float fy = 430.0f;
+		fx = 510.0f;
+		fy = 430.0f;
 		DrawFormatStringF(fx, fy, GetColor(0, 0, 0), "PLAYER HP");
 		DrawBoxAA(fx, fy + 20.0f, fx + 100.0f, fy + 40.0f, GetColor(0, 0, 0), FALSE);
 }
@@ -228,7 +228,7 @@ eSceneType GameMainScene::GetNowScene() const
 }
 
 //ハイスコアの読み込み
-void GameMainScene::ReadHighScene()
+void GameMainScene::ReadHighScore()
 {
 	RankingData data;
 	data.Initialize();
@@ -239,7 +239,7 @@ void GameMainScene::ReadHighScene()
 }
 
 //当たり判定の処理（プレイヤーと敵）
-bool GameMainScene::IsHitCheck(player* p, Enemy* e)
+bool GameMainScene::IsHitCheck(Player* p, Enemy* e)
 {
 	//プレイヤーがバリアを張っていたら、当たり判定を無視する
 	if (p->IsBarrier())

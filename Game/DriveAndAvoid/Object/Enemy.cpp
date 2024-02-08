@@ -13,7 +13,7 @@ Enemy::~Enemy()
 void Enemy::Initialize()
 {
 	//出現させるx座標パターンを取得
-	float randam_x = (float)(GetRand(4) * 105 + 40);
+	float random_x = (float)(GetRand(4) * 105 + 40);
 	//生成位置設定
 	location = Vector2D(random_x, -50.0f);
 	//当たり判定の設定

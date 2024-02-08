@@ -12,7 +12,7 @@ ResultScene::ResultScene() :back_ground(NULL), score(0)
 	}
 }
 
-ResultScene::ResultScene()
+ResultScene::~ResultScene()
 {
 
 }

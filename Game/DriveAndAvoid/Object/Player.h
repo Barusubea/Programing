@@ -10,11 +10,11 @@ private:
 	int image;			//画像データ
 	Vector2D location;	//位置情報
 	Vector2D box_size;	//当たり判定の大きさ
-	float angel;		//角度
+	float angle;		//角度
 	float speed;		//速さ
 	float hp;			//体力
 	float fuel;			//燃料
-	int barrier_const;	//バリアの枚数
+	int barrier_count;	//バリアの枚数
 	Barrier* barrier;	//バリア
 
 public:

@@ -1,6 +1,6 @@
 #include "RankingDispScene.h"
 #include"../Utility/InputControl.h"
-#include"DxLib.h
+#include"DxLib.h"
 
 RankingDispScene::RankingDispScene() :background_image(NULL), ranking(nullptr)
 {
@@ -50,7 +50,7 @@ void RankingDispScene::Draw() const
 	//取得したランキングデータを描画する
 	for (int i = 0; i < 5; i++)
 	{
-		DrawFormatString(50, 170 + i * 25, 0xffffff, "%2d %-15s %6d", ranking->GetRank(i), Ranking->GetName(i), ranking->GetScore(i));
+		DrawFormatString(50, 170 + i * 25, 0xffffff, "%2d %-15s %6d", ranking->GetRank(i), ranking->GetName(i), ranking->GetScore(i));
 	}
 }
 

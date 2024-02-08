@@ -4,7 +4,7 @@
 #include"../Object/Player.h"
 #include"../Object/Enemy.h"
 
-class GameMainScene:public ScenezBase
+class GameMainScene:public SceneBase
 {
 private:
 	int high_score;			//ハイスコア
@@ -29,7 +29,7 @@ public:
 
 private:
 	//ハイスコア読み込み処理
-	void ReadHighScene();
+	void ReadHighScore();
 	//当たり判定
 	bool IsHitCheck(Player* p, Enemy* e);
 };
